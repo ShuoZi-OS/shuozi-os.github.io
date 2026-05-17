@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | ShuoZi OS</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">ShuoZi OS</a>
+      <div class="nav-links">
+        <a href="/vision">愿景</a>
+        <a href="/roadmap">路线图</a>
+        <a href="https://github.com/ShuoZi-OS" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>ShuoZi Labs · {{ site.time | date: '%Y' }} · AI-native 操作系统</p>
+  </footer>
+</body>
+</html>

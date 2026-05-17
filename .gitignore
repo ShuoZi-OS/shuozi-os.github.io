@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# 内部文档（不公开）
+RUNTIME_RULES.md
+CODING_STANDARDS.md
+CONTRIBUTING.md
+ShuoZi OS项目计划.txt
+
+# 内部代码
+prototype/
+docs/architecture/
+
+# 其他
+*.swp
+*~
+.DS_Store

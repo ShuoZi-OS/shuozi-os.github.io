@@ -1,0 +1,8 @@
+title: ShuoZi OS
+tagline: AI-native 操作系统
+description: 一个全新的 AI-native 操作系统，从第一性原理构建。AI 直接控制硬件、管理上下文、执行工作流。
+baseurl: ""
+url: "https://shuozi-os.github.io"
+markdown: kramdown
+exclude:
+  - README.md
