@@ -27,8 +27,9 @@ AI 的操作系统：       agent → tool → context
 - [x] 架构原则 + 运行时规则
 - [x] `run_shell()` — AI 调用 shell 的结构化接口
 - [x] AI → Linux 原型
-- [ ] 公开 Dev Log
-- [ ] v0.1 发布
+- [x] 公开 Dev Log
+- [x] 公开 GitHub 仓库
+- [ ] v0.1 发布（下一步）
 
 ---
 

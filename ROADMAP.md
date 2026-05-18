@@ -32,14 +32,14 @@ Phase 6     Phase 7     Phase 8     Phase 9     Phase 10
 |---|------|------|
 | 1 | 安装 Linux (Ubuntu/WSL2) | ✅ |
 | 2 | 安装 Git / Python / Node.js / Docker | ✅ |
-| 3 | 创建 GitHub: `ShuoZi-OS` | ⬜ |
+| 3 | 创建 GitHub: `ShuoZi-OS` | ✅ |
 | 4 | 统一品牌: ShuoZi OS / ShuoZi Labs | ✅ |
 | 5 | 建立 README / VISION / ROADMAP | ✅ |
 | 6 | 写系统哲学第一版 | ✅ |
-| 7 | 学习 Shell 基础 | ⬜ |
-| 8 | 学习 Python subprocess | ⬜ |
-| 9 | 实现 `run_shell()` | ⬜ |
-| 10 | 第一次 AI → Linux 原型 | ⬜ |
+| 7 | 学习 Shell 基础 | ✅ |
+| 8 | 学习 Python subprocess | ✅ |
+| 9 | 实现 `run_shell()` | ✅ |
+| 10 | 第一次 AI → Linux 原型 | ✅ |
 
 **产出版本:** `ShuoZi Runtime v0.1`
 
