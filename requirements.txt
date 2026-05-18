@@ -1,0 +1,6 @@
+# ShuoZi OS — Python 依赖
+# Phase 1 原型阶段，仅使用标准库。
+# 以后会随着 AI runtime 的构建逐渐增加依赖。
+
+# Phase 1: 无外部依赖
+# Python 3.10+ 标准库已覆盖 subprocess, json, dataclasses
