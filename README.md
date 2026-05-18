@@ -29,6 +29,7 @@ AI 的操作系统：       agent → tool → context
 - [x] AI → Linux 原型
 - [x] 公开 Dev Log
 - [x] 公开 GitHub 仓库
+- [x] [原型演示截图](https://github.com/ShuoZi-OS/shuozi-os.github.io/issues/1)
 - [ ] v0.1 发布（下一步）
 
 ---
