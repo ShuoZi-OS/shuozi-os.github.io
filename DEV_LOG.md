@@ -1,5 +1,62 @@
 # ShuoZi OS — Dev Log
 
+## 2026-05-19: Phase 2 过半 + 全代码审查优化
+
+### 代码优化
+
+逐文件审查了全部 5 个 Python 文件，清理了 12 处死 import / 死变量 / 无意义调用：
+
+- `run_shell.py` — 删除 `sys`, `shlex` 死 import
+- `shell_cli.py` — 删除 `time`, `shutil` 死 import，删除 `WHITE/GRAY/BG_RED` 死常量，修复 `c(DIM, "")` 包装空字符串
+- `shell_ai.py` — 无问题，新增 Session 日志写入
+- `ai_linux.py` — 完全重构：
+  - 文件操作统一用 Python 原生 I/O（不再走 shell）
+  - 新增 `fs.write` tool（覆盖 + 追加）
+  - `fs.read` 改用 `open().read()`
+  - `fs.ls` 改用 `os.listdir()` 返回结构化结果
+  - 删除 `shlex`, `asdict`, `Optional`, `Any` 死 import
+  - 意图匹配新增写文件支持
+
+### 双终端架构
+
+- 创建 `prototype/session.py` — 共享 Session 对象
+  - CLI 终端和 AI 终端写入同一个 Session
+  - 每条操作记录 source（cli/ai）、timestamp、结果
+  - `summary()` 返回会话摘要
+- `shell_cli.py` 和 `shell_ai.py` 都接入 Session
+  - CLI 新增 `summary` 命令查看会话状态
+  - AI 模式写的命令 CLI 通过 history 可见，反之亦然
+- 编写 `docs/design/dual-terminal.md` 架构设计文档
+
+### 项目规则
+
+- `CODING_STANDARDS.md` 新增铁律 #6：先想后写，写后再想，然后优化。简洁就是好代码。
+- 编写 `docs/learning/git-flow.md` — Git Flow 分支策略文档
+
+### GitHub 进度
+
+- 推送 6 次 commit（文档更新 + 优化 + 分支创建）
+- 创建 `dev` 分支
+- 公开发布 Phase 1 原型截图（Issue #1，标注为示例界面）
+- README 链接截图、更新完成状态
+
+### Phase 2 进度: 7/10
+
+| # | 任务 | 状态 |
+|---|------|------|
+| 11 | X/Twitter | ⬜ 暂缓（手机验证） |
+| 12 | Dev Log | ✅ |
+| 13 | 公开截图 | ✅ |
+| 14 | 开发日志文档 | ✅ |
+| 15 | 每天 commit | ✅ |
+| 16 | Git Flow | ✅ |
+| 17 | 项目目录结构 | ✅ |
+| 18 | read/write file | ✅ |
+| 19 | Demo 视频 | ⬜ 明天 |
+| 20 | v0.1 发布 | ⬜ |
+
+---
+
 ## 2026-05-17: Phase 1 完成
 
 ### 完成了什么
