@@ -9,7 +9,7 @@
 
 ShuoZi OS 是为 AI agent 设计的操作系统。
 
-传统 OS 的设计中心是**进程**——执行中的程序，通过文件系统读写数据，通过系统调用请求服务。  
+传统 OS 的设计中心是进程——执行中的程序，通过文件系统读写数据，通过系统调用请求服务。  
 ShuoZi OS 的设计中心是 **agent**——能理解上下文、使用工具、自主规划执行任务的 AI 实体。
 
 ```
@@ -19,28 +19,23 @@ AI 的操作系统：       agent → tool → context
 
 ---
 
-## 当前阶段
+## ⚠ 当前状态
 
-**Phase 1: 起步** — 搭建环境、学习系统编程、实现最小原型。
+**正在开发内核。Phase 0，Step 1。**
 
-- [x] 核心文档（README / VISION / ROADMAP）
-- [x] 架构原则 + 运行时规则
-- [x] `run_shell()` — AI 调用 shell 的结构化接口
-- [x] AI → Linux 原型
-- [x] 公开 Dev Log
-- [x] 公开 GitHub 仓库
-- [x] [原型演示截图](https://github.com/ShuoZi-OS/shuozi-os.github.io/issues/1)
-- [ ] v0.1 发布（下一步）
+这是一个从裸机启动开始的 OS 项目。当前没有可用版本，没有安装包，不面向普通用户。
+
+`prototype/` 目录存放了架构设计的概念验证代码（Python），仅作设计参考——不是 ShuoZi OS 本身。
 
 ---
 
 ## 核心理念
 
-- **双终端架构。** CLI 终端（人类）和 AI 终端（Agent）共享同一个 Session。数据互相同步。
-- **工具化架构。** 每个能力封装为独立的、可组合的 tool。
-- **能力抽象，非应用抽象。** 暴露"做什么"而非"打开哪个应用"。
-- **权限是能力令牌。** 安全从第一天内建于架构。
-- **AI 是头等用户。** agent 和人类通过同一套结构化接口操作系统。
+- **从第一性原理出发。** 不抄 Linux。每个子系统重新设计。
+- **内核优先。** 先有能启动的内核，才有上面的一切。
+- **工具化架构。** 系统能力通过 tool 暴露，不是通过 GUI 菜单。
+- **双盘存储。** 工作盘 + 备份盘。删除不传备份。误删零损失。
+- **安全是结构性的。** 从 bootloader 到 syscall，每一层都自带安全检查。
 
 ---
 
@@ -51,12 +46,20 @@ AI 的操作系统：       agent → tool → context
 | [VISION.md](VISION.md) | 10 年愿景 |
 | [ROADMAP.md](ROADMAP.md) | 100 步路线图 |
 | [ARCHITECTURE_PRINCIPLES.md](ARCHITECTURE_PRINCIPLES.md) | 设计宪章 |
+| [RUNTIME_RULES.md](RUNTIME_RULES.md) | 系统铁律 |
+| [CODING_STANDARDS.md](CODING_STANDARDS.md) | 编码规范 |
+| [DEV_LOG.md](DEV_LOG.md) | 开发日志 |
+| [prototype/README.md](prototype/README.md) | 原型归档说明 |
+| [docs/design/](docs/design/) | 架构设计文档 |
 
 ---
 
-## 网站
+## 技术栈
 
-[shuozi-os.github.io](https://shuozi-os.github.io)
+- **内核:** C + 少量汇编（x86-64）
+- **构建:** Make + GCC cross-compiler
+- **模拟:** QEMU
+- **参考设计:** `prototype/` Python 代码
 
 ---
 
